@@ -63,10 +63,11 @@ to read, list and watch Pods in all Namespaces of the cluster
 - `kubectl auth can-i --list --namespace=kube-system --as=system:serviceaccount:prometheus:carol`
 - `kubectl auth can-i watch pods --all-namespaces --as=system:serviceaccount:prometheus:carol`
 
-### Task 03
+### Task 3
 
 Created Namespace `dev` and two ServiceAccounts `jane` and `ken`, assigned ClusterRole `admin`
-and `view` to `jane` and `ken` respectively, using RoleBinding
+and `view` to `jane` and `ken` respectively, using RoleBinding. A RoleBinding referring to 
+a ClusterRole only grants access to resources inside the RoleBinding's namespace.
 
 - `kubectl auth can-i --list --as=system:serviceaccount:dev:jane -n dev`
 - `kubectl auth can-i create deployments --as=system:serviceaccount:dev:jane --all-namespaces`
