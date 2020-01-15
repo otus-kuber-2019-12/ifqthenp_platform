@@ -7,29 +7,24 @@ spec:
   selector:
     matchLabels:
       app: web
-  strategy:
-    type: RollingUpdate
-    rollingUpdate:
-      maxSurge: 3
-      maxUnavailable: 1
   template:
     metadata:
       labels:
         app: web
     spec:
       containers:
-        - name: web-server-hw-1
-          image: ifqthenp/server-hw-1:latest
-          livenessProbe:
-            tcpSocket:
-              port: 8000
-          readinessProbe:
-            httpGet:
-              path: /index.html
-              port: 8000
-          volumeMounts:
-            - name: app
-              mountPath: /app
+      - name: web
+        image: ifqthenp/server-hw-1:latest
+        livenessProbe:
+          tcpSocket:
+            port: 8000
+        readinessProbe:
+          httpGet:
+            path: /index.html
+            port: 8000
+        volumeMounts:
+          - name: app
+            mountPath: /app
       initContainers:
         - name: html-gen
           image: busybox:musl
