@@ -78,7 +78,7 @@ a ClusterRole only grants access to resources inside the RoleBinding's namespace
 
 [1]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em
 
-## HW4. Kubernetes Networks
+## HW 4. Kubernetes Networks
 
 *TODO:* All tasks marked with :star2:
 
@@ -95,3 +95,10 @@ a ClusterRole only grants access to resources inside the RoleBinding's namespace
 - Added `LoadBalancer` service
 - Set up `Ingress` controller and `ingres-nginx` proxy
 - Created `Ingress` rules
+
+## HW 5. Kubernetes Volumes, Storages, StatefulSet
+
+- Deployed `StatefulSet` with MinIO application as local S3 storage
+- Created headless service for the app
+- Installed `mc` CLI tool for MinIO and managed resources in the storage using this tool
+- :star: Added `Secret` object to store MinIO access and secret keys and configured `StatefulSet` to use data from `Secret`
