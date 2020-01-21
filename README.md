@@ -77,3 +77,21 @@ a ClusterRole only grants access to resources inside the RoleBinding's namespace
 - `kubectl auth can-i list pods --as=system:serviceaccount:dev:ken -n dev`
 
 [1]: https://kubernetes.io/docs/reference/generated/kubectl/kubectl-commands#-em-can-i-em
+
+## HW4. Kubernetes Networks
+
+*TODO:* All tasks marked with :star2:
+
+### Working with test web application
+
+- Added readiness/liveness probes to a Pod
+- Created Deployment object from `kubernetes-intro/web-pody.yam`
+- Added services of `ClusterIP` type to the cluster
+- Enabled IPVS load balancing mode in the cluster
+
+### Accessing application from outside cluster
+
+- Set up MetalLB in Layer2 mode
+- Added `LoadBalancer` service
+- Set up `Ingress` controller and `ingres-nginx` proxy
+- Created `Ingress` rules

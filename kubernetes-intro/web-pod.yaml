@@ -23,6 +23,13 @@ spec:
   containers:
     - name: web-server-hw-1
       image: ifqthenp/server-hw-1:latest
+      readinessProbe:
+        httpGet:
+          path: /index.html
+          port: 8000
+      livenessProbe:
+        tcpSocket:
+          port: 8000
       volumeMounts:
         - name: app
           mountPath: /app
