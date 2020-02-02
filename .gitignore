@@ -5,3 +5,4 @@ creds/
 .terraform/
 *.tfstate
 *.tfstate.backup
+*.crt
