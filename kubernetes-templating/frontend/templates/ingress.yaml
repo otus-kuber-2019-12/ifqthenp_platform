@@ -11,10 +11,10 @@ metadata:
 spec:
   tls:
     - hosts:
-        - shop.34.89.102.97.nip.io
+        - shop.35.246.25.233.nip.io
       secretName: frontend-tls
   rules:
-    - host: shop.34.89.102.97.nip.io
+    - host: shop.35.246.25.233.nip.io
       http:
         paths:
           - path: /
