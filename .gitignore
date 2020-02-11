@@ -6,3 +6,4 @@ creds/
 *.tfstate
 *.tfstate.backup
 *.crt
+kubernetes-templating/**/charts/
