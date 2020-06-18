@@ -3,13 +3,6 @@ provider "google" {
   region  = var.provider_region
 }
 
-terraform {
-  backend "gcs" {
-    bucket = "tf-state-otus"
-    prefix = "kubernetes/monitoring"
-  }
-}
-
 data "google_container_engine_versions" "euwest2a" {
   location       = var.cluster_zone
   version_prefix = "1.16."
