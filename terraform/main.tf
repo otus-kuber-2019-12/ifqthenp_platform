@@ -16,6 +16,8 @@ resource "google_container_cluster" "gke-cluster" {
   description        = var.cluster_description
   node_version       = data.google_container_engine_versions.euwest2a.latest_node_version
   min_master_version = data.google_container_engine_versions.euwest2a.latest_master_version
+  logging_service    = var.logging_service
+  monitoring_service = var.monitoring_service
 }
 
 output "latest_node_version" {

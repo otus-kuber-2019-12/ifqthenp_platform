@@ -36,3 +36,15 @@ variable "provider_region" {
   type        = string
   default     = "europe-west2"
 }
+
+variable "logging_service" {
+  description = "Default logging service provided by GKE"
+  type        = string
+  default     = "none"
+}
+
+variable "monitoring_service" {
+  description = "Default monitoring service provided by GKE"
+  type        = string
+  default     = "none"
+}
