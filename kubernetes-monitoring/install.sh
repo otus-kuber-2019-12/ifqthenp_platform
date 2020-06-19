@@ -13,6 +13,5 @@ helm upgrade --install prometheus ./prometheus-operator \
     --namespace monitoring \
     --set prometheusOperator.createCustomResource=false \
     --set prometheus.serviceMonitorSelectorNilUsesHelmValues=false \
-    --set grafana.adminPassword=admin
 
-kubectl apply -f ./nginx/servicemonitor.yaml -f ./nginx/nginx.yaml
+kubectl apply -f ./nginx/nginx.yaml -f ./nginx/servicemonitor.yaml

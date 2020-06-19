@@ -468,3 +468,20 @@ NAME                         COMPLETIONS   DURATION   AGE
 backup-mysql-instance-job    1/1           1s         14m
 restore-mysql-instance-job   1/1           6m17s      17m
 ```
+
+## HW 8. Service Monitoring in Kubernetes Cluster.
+
+- Downloaded `prometheus-operator` helm chart using `helm pull stable/prometheus-operator --untar` 
+- Installed CRD manifests in `kubernetes-monitoring/prometheus-operatror/crds` folder
+- Installed `prometheus-operator` helm chart using Helm 3
+
+```bash
+cd kubernetes-monitoring
+helm upgrade --install prometheus ./prometheus-operator \
+    --namespace monitoring \
+    --set prometheusOperator.createCustomResource=false \
+    --set prometheus.serviceMonitorSelectorNilUsesHelmValues=false
+```
+
+- Created manifests for Nginx application and ServiceMonitor
+- Created bash script `install.sh` to automate installation process
