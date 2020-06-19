@@ -6,11 +6,13 @@ variable "backend_prefix" {
 variable "cluster_description" {
   description = "GKE cluster short description"
   type        = string
+  default     = "Otus Kubernetes Homework"
 }
 
 variable "cluster_name" {
   description = "Name of GKE cluster"
   type        = string
+  default     = "otus-kubernetes-hw"
 }
 
 variable "node_count" {
